@@ -106,7 +106,15 @@ function DataTableComponent() {
       )}
 
       {/* Table container and icon button */}
-      <div style={{ position: "relative", display: "inline-block" }}>
+      <div
+        style={{
+          position: "relative",
+          display: "inline-block",
+          width: "100%",
+          minWidth: "800px",
+          overflowX: "auto",
+        }}
+      >
         <button
           onClick={(e) => op.current?.toggle(e)}
           style={{
@@ -144,7 +152,7 @@ function DataTableComponent() {
             setSelectedRows(e.value);
           }}
           dataKey="id"
-          tableStyle={{ minWidth: "50rem" }}
+          //tableStyle={{ minWidth: "0rem" }}
         >
           {/* Column for multi-select checkboxes */}
           <Column selectionMode="multiple" headerStyle={{ width: "3rem" }} />
