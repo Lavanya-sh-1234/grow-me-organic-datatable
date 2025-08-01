@@ -83,13 +83,26 @@ function DataTableComponent() {
     <div>
       {/* OverlayPanel tp allow users to input the number of rows to select and fetch */}
       <OverlayPanel ref={op} showCloseIcon>
+        <label
+          htmlFor="row-input"
+          style={{
+            fontStyle: "italic",
+            fontWeight: 400,
+            color: "#555",
+            fontSize: "0.82rem",
+            marginRight: "0.75rem",
+            marginBottom: "0.25rem",
+            display: "inline-block",
+          }}
+        >
+          Enter number of rows to select
+        </label>
         <InputNumber
           value={rowsNumber}
           onValueChange={(e) => setRowsNumber(e.value || 0)}
           showButtons
           min={1}
           max={100}
-          placeholder="Rows per page"
         />
 
         <div style={{ marginTop: "1rem" }}>
@@ -152,7 +165,6 @@ function DataTableComponent() {
             setSelectedRows(e.value);
           }}
           dataKey="id"
-          //tableStyle={{ minWidth: "0rem" }}
         >
           {/* Column for multi-select checkboxes */}
           <Column selectionMode="multiple" headerStyle={{ width: "3rem" }} />
